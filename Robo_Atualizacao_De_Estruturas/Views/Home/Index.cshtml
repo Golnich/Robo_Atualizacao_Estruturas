@@ -1,0 +1,130 @@
+﻿@model  Robo_Atualizacao_De_Estruturas.ViewModels.AtualizacaoEstruturas
+
+<div class="alert alert-info">
+    <div align="center">
+        <h2 class="panel-title">  <i>Informe os dados do banco</i></h2>
+    </div>
+</div>
+
+<body>
+    <div class="panel-body">
+        <fieldset>
+            <legend id="titulo1"> <strong>Dados do Banco</strong></legend>
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label class="">
+                        String de Conexão:
+                    </label>
+                    @Html.TextBoxFor(l => l.String_Conexao, new { @class = "form-control", @placeholder = "Insira a string de conexão com seu banco de dados" })
+                </div>
+                <div class="col-md-4">
+                    <label class="">
+                        Banco principal:
+                    </label>
+                    @Html.TextBoxFor(l => l.Banco_Principal, new { @class = "form-control", @placeholder = "Informe o banco principal" })
+                </div>
+            </div>
+            <br>
+            <div class="row">
+
+                <div class="col-md-4">
+                    <label class="">
+                        Banco para atualizar:
+                    </label>
+                    @Html.TextBoxFor(l => l.Banco_Atualizar, new { @class = "form-control", @placeholder = "Informe o banco a ser atualizado" })
+                </div>
+                <div class="col-md-4" id="id_tipos">
+                    <section>
+                        <div class="col-md-3" align="center">
+
+                            Estruturas:
+
+                            @Html.CheckBoxFor(l => l.Estrutura)
+                        </div>
+                    </section>
+                    <section>
+                        <div class="col-md-2" align="center">
+
+                            Indices:
+
+                            @Html.CheckBoxFor(l => l.Indices)
+                        </div>
+                    </section>
+                    <section>
+                        <div class="col-md-3" align="center">
+
+                            Procedures:
+
+                            @Html.CheckBoxFor(l => l.Procedures)
+                        </div>
+                    </section>
+                    <section>
+                        <div class="col-md-3" align="center">
+                            Chaves:
+                            @Html.CheckBoxFor(l => l.Chaves_Primarias)
+                        </div>
+                    </section>
+                </div>
+                <br />
+
+                <div class="col-md-4">
+                    <button class="btn btn-warning" type="button" id="btnAtualizar">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        Atualizar
+                    </button>
+                    <button class="btn btn-success" type="button" id="btnTestarConexao">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        Testar Conexão
+                    </button>
+
+                </div>
+            </div>
+            <div class="col-md-12" style="overflow-x:auto">
+                <div id="divResult">
+
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</body>
+
+@section Scripts{
+    <script>
+        $("#btnTestarConexao").click(function () {
+            var model = {
+                String_Conexao: $("#String_Conexao").val()             
+            }
+            $.ajax({
+                url: '../Home/TestaConexao',
+                type: "POST",
+                data: model,
+                success: function (dados) {
+                    alert(dados)
+                }
+            });
+        })
+
+
+        $("#btnAtualizar").click(function () {
+            var model = {
+                String_Conexao: $("#String_Conexao").val(),
+                Banco_Principal: $("#Banco_Principal").val(),
+                Banco_Atualizar: $("#Banco_Atualizar").val(),
+                Estrutura: $("#Estrutura").is(':checked'),
+                Procedures: $("#Procedures").is(':checked'),
+                Indices: $("#Indices").is(':checked'),
+                Chaves_Primarias: $("#Chaves_Primarias").is(':checked'),
+            }
+            $.ajax({
+                url: '../Home/AtualizaBancos',
+                type: "POST",
+                data: model,
+                success: function (dados) {
+                    alert(dados.Mensagem)
+                }
+            });
+        });
+
+    </script>
+}

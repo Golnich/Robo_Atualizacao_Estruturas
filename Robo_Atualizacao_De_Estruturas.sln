@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Robo_Atualizacao_De_Estruturas", "Robo_Atualizacao_De_Estruturas\Robo_Atualizacao_De_Estruturas.csproj", "{B4B38692-C801-4965-AC35-0D9ACF87ADC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Apresentation", "0 - Apresentation", "{3C647F32-D137-403C-8768-5E4DB599B5C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{01B274D1-A213-4B70-B07F-245C254EF992}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtualizacaoDeEstruturas.Service", "AtualizacaoDeEstruturas.Service\AtualizacaoDeEstruturas.Service.csproj", "{78EF8690-6284-4C33-9E1E-5466E299B635}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4B38692-C801-4965-AC35-0D9ACF87ADC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B38692-C801-4965-AC35-0D9ACF87ADC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B38692-C801-4965-AC35-0D9ACF87ADC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B38692-C801-4965-AC35-0D9ACF87ADC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78EF8690-6284-4C33-9E1E-5466E299B635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78EF8690-6284-4C33-9E1E-5466E299B635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78EF8690-6284-4C33-9E1E-5466E299B635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78EF8690-6284-4C33-9E1E-5466E299B635}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B4B38692-C801-4965-AC35-0D9ACF87ADC9} = {3C647F32-D137-403C-8768-5E4DB599B5C1}
+		{78EF8690-6284-4C33-9E1E-5466E299B635} = {01B274D1-A213-4B70-B07F-245C254EF992}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A293CEDC-C959-4B90-9FEE-CE1AECF04F34}
+	EndGlobalSection
+EndGlobal
